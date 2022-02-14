@@ -1,6 +1,40 @@
-type ExampleEntity @entity {
+type Token @entity {
   id: ID!
-  count: BigInt!
-  owner: Bytes! # address
-  approved: Bytes! # address
+  tokenID: BigInt!
+  tokenURI: String!
+  externalURL: String!
+  image: String!
+  name: String!
+  description: String!
+  type: String!
+  updatedAtTimestamp: BigInt!
+  owner: User!
+  background: String!
+  skinTone: String!
+  bodyShape: String!
+  top: String!
+  eyebrows: String!
+  eyeStyle: String!
+  eyeColor: String!
+  mouth: String!
+  hairFront: String!
+  hairBack: String!
+  hairColor: String!
+  hat: String!
+  necklace: String!
+  archetypeOfPower: String!
+  sunSign: String!
+  moonSign: String!
+  risingSign: String!
+  will: BigInt!
+  wisdom: BigInt!
+  wonder: BigInt!
+  woe: BigInt!
+  wiles: BigInt!
+
+}
+
+type User @entity {
+  id: ID!
+  tokens: [Token!]! @derivedFrom(field: "owner")
 }
