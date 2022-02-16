@@ -9,6 +9,7 @@ type Token @entity {
   type: String!
   updatedAtTimestamp: BigInt!
   owner: User!
+  backgroundColor: String!
   background: String!
   skinTone: String!
   bodyShape: String!

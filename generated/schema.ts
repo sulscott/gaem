@@ -25,6 +25,7 @@ export class Token extends Entity {
     this.set("type", Value.fromString(""));
     this.set("updatedAtTimestamp", Value.fromBigInt(BigInt.zero()));
     this.set("owner", Value.fromString(""));
+    this.set("backgroundColor", Value.fromString(""));
     this.set("background", Value.fromString(""));
     this.set("skinTone", Value.fromString(""));
     this.set("bodyShape", Value.fromString(""));
@@ -154,6 +155,15 @@ export class Token extends Entity {
 
   set owner(value: string) {
     this.set("owner", Value.fromString(value));
+  }
+
+  get backgroundColor(): string {
+    let value = this.get("backgroundColor");
+    return value!.toString();
+  }
+
+  set backgroundColor(value: string) {
+    this.set("backgroundColor", Value.fromString(value));
   }
 
   get background(): string {
